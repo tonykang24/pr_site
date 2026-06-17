@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>sub_brain — 개인 지식·기억 베이스 | 강기호</title>
+<meta name="description" content="흩어진 자료를 한자리에 정리하고, 물어보면 출처와 함께 답하는 개인 지식·기억 베이스를 직접 설계하고 운영합니다." />
+<meta property="og:title" content="sub_brain — 개인 지식·기억 베이스 | 강기호" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="bar">
+    <a href="index.html" class="logo">강기호<span>.</span></a>
+    <a href="about.html" class="back">← About으로</a>
+  </div>
+</header>
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Tooling · 개인 지식·기억 베이스</span>
+    <h1 class="case-title reveal">흩어진 자료를<br />하나의 보조 기억으로.</h1>
+    <p class="case-sub reveal">평소에 모은 자료가 정작 필요할 때는 안 보였습니다. 그래서 자료를 한자리에 넣어 정리하고, 물어보면 출처와 함께 답하는 개인 지식·기억 베이스를 직접 설계하고 운영하고 있습니다.</p>
+    <div class="case-meta reveal">
+      <span class="m"><b>역할</b>설계 · 운영</span>
+      <span class="m"><b>형태</b>1인 제작</span>
+      <span class="m"><b>기술</b>Python · 로컬 임베딩 · 옵시디언</span>
+      <span class="m"><b>참고</b>카파시 LLM Wiki 패턴</span>
+    </div>
+    <img class="hero-art reveal" src="images/sub-brain-graph.png" alt="sub_brain 옵시디언 그래프 뷰 — 자료가 위키링크로 이어진 지식 그래프" loading="lazy" onerror="this.parentElement.removeChild(this)">
+  </div>
+</section>
+
+<div class="content">
+  <div class="wrap">
+
+    <div class="case-block reveal">
+      <div class="cb-label">왜 만들었나</div>
+      <p class="pullquote">"모으는 건 잘했는데,<br />다시 못 찾았습니다."</p>
+      <div class="emo-grid">
+        <div class="emo">
+          <div class="em-t">목적 · 무엇을 푸나</div>
+          <div class="em-d">여가마다 위키와 정보 요약 영상, 개발자 인터뷰를 파며 자료를 모으는데, 정작 기획하다 떠오른 자료는 어디에 저장했는지 못 찾아 같은 검색을 다시 하는 일이 잦았습니다. 흩어진 자료를 한곳에 넣어 두고 필요할 때 바로 꺼내려고 만들었습니다.</div>
+        </div>
+        <div class="emo">
+          <div class="em-t">기획 의도 · 왜 검색이 아니라 정리인가</div>
+          <div class="em-d">자료를 그냥 검색만 하면 원본을 매번 다시 뒤지게 됩니다. 그래서 자료를 넣을 때 LLM이 핵심을 정리한 위키 페이지를 만들어 쌓고, 임베딩 검색은 자료가 많아졌을 때 관련 부분을 빠르게 찾는 보조로만 두었습니다. 지식은 정리된 글로 남고, 검색은 그 글을 찾는 데만 씁니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-block reveal">
+      <div class="cb-label">구조 — 자료를 다루는 세 켜</div>
+      <p style="margin-bottom:var(--s5)">자료를 세 켜로 나눠 다룹니다. 원본은 그대로 두고, 정리한 지식을 그 위에 쌓고, 검색은 따로 둡니다.</p>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="fs-tag">원본</span>
+          <div class="fs-t">raw · 불변 원본</div>
+          <div class="fs-d">넣은 자료의 원본입니다. 한 번 들어오면 고치지 않습니다. 모든 인용이 이 raw를 출처로 가리킵니다.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <span class="fs-tag">지식</span>
+          <div class="fs-t">wiki · LLM이 정리</div>
+          <div class="fs-d">LLM이 핵심을 추려 만든 마크다운입니다. 새 자료를 기존 페이지와 [[링크]](옵시디언 위키링크)로 이어, 그 연결이 옵시디언 그래프 뷰에 그대로 그려집니다.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <span class="fs-tag">검색</span>
+          <div class="fs-t">임베딩 색인</div>
+          <div class="fs-d">자료가 늘었을 때 관련 부분을 빠르게 찾는 보조 검색입니다. 로컬 Ollama로 돌려 자료가 밖으로 나가지 않습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-block reveal">
+      <div class="cb-label">쓰는 법 — 넣기 · 묻기 · 점검</div>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="fs-tag">/wikilearn</span>
+          <div class="fs-t">자료를 넣는다</div>
+          <div class="fs-d">파일이나 링크를 주면 raw에 저장하고 색인한 뒤, 핵심을 요약해 보여주고 위키 페이지를 만들거나 갱신합니다. 그 과정에서 관련 페이지끼리 링크가 생겨 그래프가 점점 촘촘해집니다.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <span class="fs-tag">/wikiask</span>
+          <div class="fs-t">물어본다</div>
+          <div class="fs-d">질문을 임베딩해 관련 자료를 찾고, 정리된 위키를 우선 읽어 출처를 단 답을 만듭니다. 모아둔 자료에 근거가 없으면 지어내지 않고 없다고 답합니다.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <span class="fs-tag">/wikilint</span>
+          <div class="fs-t">점검한다</div>
+          <div class="fs-d">자료가 쌓이면 가끔 돌립니다. 모순, 고아 페이지, 끊긴 링크, 빠진 개념을 찾아 정리 상태를 봐 줍니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-block reveal">
+      <div class="cb-label">graphify와 역할 나누기</div>
+      <p style="margin-bottom:var(--s5)">지식 그래프 도구 graphify와 같이 굴리는데, 둘이 같은 사실을 적으면 나중에 한쪽이 낡아 어긋납니다. 그래서 적는 자리를 셋으로 갈랐습니다.</p>
+      <ul class="mech-list">
+        <li><b>왜는 sub_brain</b> — 설계 의도나 결정처럼, 코드가 바뀌어도 낡지 않는 맥락은 위키에 적습니다.</li>
+        <li><b>무엇은 graphify</b> — 파일·함수·호출 관계처럼 코드가 바뀌면 낡는 사실은 graphify가 코드에서 직접 뽑게 둡니다.</li>
+        <li><b>겪은 일은 devlog</b> — 그날 막힌 일과 풀이는 회고 일지에 시간순으로 남깁니다.</li>
+      </ul>
+    </div>
+
+    <div class="case-block reveal">
+      <div class="cb-label">운영하며 내린 결정</div>
+      <ul class="mech-list">
+        <li><b>분류는 코드가 아니라 지시문에 맡긴다</b> — 자료를 어디로 보낼지 판단하는 일을 스크립트에 박지 않고, 커맨드 지시문에 적어 LLM이 그때그때 판정하게 했습니다.</li>
+        <li><b>답에는 출처를 단다</b> — 모아둔 자료에 없는 내용을 지어내지 않도록, 답할 때 근거가 된 raw를 반드시 함께 답니다.</li>
+        <li><b>raw는 손대지 않는다</b> — 원본을 고치면 인용의 출처를 되짚을 수 없게 됩니다. 그래서 raw는 한 번 들어오면 불변으로 둡니다.</li>
+      </ul>
+    </div>
+
+    <div class="case-block reveal">
+      <div class="cb-label">지금 상태</div>
+      <table class="spec-table">
+        <thead><tr><th>항목</th><th>값과 설명</th></tr></thead>
+        <tbody>
+          <tr><td>계층 구조</td><td>3켜. raw(불변 원본) · wiki(LLM이 정리) · 임베딩 색인(보조 검색)으로 나눴습니다.</td></tr>
+          <tr><td>커맨드</td><td>3개. /wikilearn(넣기) · /wikiask(묻기) · /wikilint(점검).</td></tr>
+          <tr><td>임베딩 백엔드</td><td>로컬 Ollama. 자료가 밖으로 나가지 않습니다. OpenAI로도 바꿀 수 있습니다.</td></tr>
+          <tr><td>그래프 뷰</td><td>옵시디언. 위키의 [[링크]]가 노드와 간선으로 그려집니다.</td></tr>
+          <tr><td>색인 규모</td><td>청크 1,000개 이상. 자료를 넣을수록 늘어납니다.</td></tr>
+          <tr><td>참고한 패턴</td><td>카파시(Andrej Karpathy)의 LLM Wiki 패턴에 임베딩 검색과 옵시디언 그래프를 더했습니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="case-block reveal">
+      <div class="cb-label">기획자로서 의미</div>
+      <p>About에 적은 "잡학다식한 기획자"는 평소에 자료를 모으는 습관에서 나온 말인데, 모으기만 해서는 기획할 때 바로 꺼내 쓸 수가 없었습니다. sub_brain은 그 자료를 정리해 다시 찾을 수 있게 만든 자리라, 막힐 때 다른 게임은 이 문제를 어떻게 풀었는지 출처까지 짚어 바로 꺼낼 수 있습니다. 이 도구를 만들고 굴리면서, 흩어진 정보를 어떤 구조로 나눠 담아야 다시 쓸 수 있는지를 직접 설계해 봤습니다.</p>
+    </div>
+
+    <div class="bottom-nav reveal">
+      <a href="about.html" class="btn">← About으로 돌아가기</a>
+      <a href="projects.html" class="btn primary">프로젝트 보기 →</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 강기호 (Kiho Kang) · Game System Designer Portfolio</footer>
+
+<script>
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i, 4) * 0.06) + 's';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
