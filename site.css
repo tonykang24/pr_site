@@ -328,6 +328,18 @@ nav.links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-22
 .contact .sec-title{margin-bottom:var(--s4)}
 .contact .sec-desc{margin:0 auto var(--s7)}
 .contact-row{display:flex;gap:var(--s4);justify-content:center;flex-wrap:wrap}
+.cmethod-list{display:flex;flex-direction:column;gap:var(--s3);max-width:520px;margin:0 auto;text-align:left}
+.cmethod{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s4);background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s4) var(--s5);color:var(--text);text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.cmethod:hover{transform:translateY(-3px);border-color:#bfe3da;box-shadow:0 12px 30px rgba(20,184,163,.1)}
+.cmethod .cm-icon{flex:0 0 auto;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:var(--r-sm);background:var(--bg-soft);color:var(--accent)}
+.cmethod .cm-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cmethod .cm-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cmethod .cm-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.cmethod .cm-value{font-weight:600;word-break:break-all}
+.cmethod .cm-action{margin-left:auto;flex:0 0 auto;font-size:13px;color:var(--muted)}
+.cmethod-foot{margin-top:var(--s6)}
+.cmethod-foot a{color:var(--muted);text-decoration:none;font-size:14px}
+.cmethod-foot a:hover{color:var(--accent)}
 
 footer{border-top:1px solid var(--line);padding:var(--s7) 0;text-align:center;color:var(--muted-soft);font-size:13px}
 
