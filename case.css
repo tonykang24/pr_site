@@ -73,7 +73,18 @@ a{color:inherit;text-decoration:none}
 .video-cta .vc-meta{font-size:13px;color:var(--muted-soft);margin-top:6px}
 .video-cta .vc-arrow{flex-shrink:0;display:flex;align-items:center;padding:0 var(--s5);color:var(--accent-soft);font-size:22px;font-weight:600;transition:transform .25s,color .25s}
 .video-cta:hover .vc-arrow{transform:translateX(4px);color:var(--accent)}
-.video-cap{font-size:14px;color:var(--muted);line-height:1.8;margin-top:var(--s3)}
+.case-block .video-cap,.case-block .doc-cap{font-size:14px;color:var(--muted);line-height:1.8;margin-top:var(--s3)}
+
+/* document link card (외부 기획 문서 링크) */
+.doc-cta{display:flex;align-items:center;gap:var(--s4);background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s5);transition:transform .25s,border-color .25s,box-shadow .25s;text-decoration:none;color:inherit}
+.doc-cta:hover{transform:translateY(-3px);border-color:#bfe3da;box-shadow:0 14px 32px rgba(20,184,163,.16)}
+.doc-cta .doc-body{flex:1;min-width:0}
+.doc-cta .doc-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+.doc-cta .doc-title{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-0.01em;line-height:1.4}
+.doc-cta .doc-title-en{font-size:13px;font-weight:600;color:var(--muted);line-height:1.5;margin-top:var(--s1)}
+.doc-cta .doc-meta{font-size:13px;color:var(--muted-soft);margin-top:var(--s2)}
+.doc-cta .doc-arrow{flex-shrink:0;color:var(--accent-soft);font-size:22px;font-weight:600;transition:transform .25s,color .25s}
+.doc-cta:hover .doc-arrow{transform:translateX(4px);color:var(--accent)}
 
 /* spec table */
 .spec-table{width:100%;border-collapse:collapse;font-size:15px;color:var(--muted);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
@@ -143,7 +154,7 @@ a{color:inherit;text-decoration:none}
 .pdf-btn:hover{border-color:#bfe3da;background:var(--bg-soft);transform:translateY(-2px)}
 .pdf-btn.primary{background:var(--accent);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(20,184,163,.25)}
 .pdf-btn.primary:hover{background:#10a692;color:#fff;border-color:transparent}
-.pdf-meta{font-size:14px;color:var(--muted);line-height:1.8;margin-top:var(--s3)}
+.case-block .pdf-meta{font-size:14px;color:var(--muted);line-height:1.8;margin-top:var(--s3)}
 
 .content{padding-bottom:var(--s6)}
 .bottom-nav{border-top:1px solid var(--line);padding-top:var(--s6);display:flex;gap:var(--s4);flex-wrap:wrap}
@@ -176,5 +187,6 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;text-align:center;co
   .video-cta .vc-thumb{flex:none;width:100%}
   .video-cta .vc-arrow{display:none}
   .video-cta .vc-body{padding:var(--s4) var(--s5) var(--s5)}
+  .doc-cta .doc-arrow{display:none}
 }
 @media(max-width:480px){.wrap{padding:0 20px}.topbar .bar{padding:0 20px}}
