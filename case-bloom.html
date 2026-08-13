@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>블룸 사이클 (Bloomcycle) — 케이스 스터디 | 강기호</title>
+<title>블룸 사이클 (Bloom Cycle) — 케이스 스터디 | 강기호</title>
 <meta name="description" content="직접 때리지 않는 덱빌딩 '블룸 사이클'의 키워드 반응 시스템 기획." />
+<meta property="og:title" content="블룸 사이클 (Bloom Cycle) — 케이스 스터디 | 강기호" />
+<meta property="og:description" content="직접 때리지 않는 덱빌딩 '블룸 사이클'의 키워드 반응 시스템 기획." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <link rel="stylesheet" href="case.css" />
@@ -20,12 +24,12 @@
 
 <section class="case-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Case Study · 블룸 사이클 (Bloomcycle)</span>
+    <span class="eyebrow reveal">Case Study · 블룸 사이클 (Bloom Cycle)</span>
     <h1 class="case-title reveal">직접 때리지 않는<br />덱빌딩.</h1>
     <p class="case-sub reveal">카드로 적을 직접 때리지 않습니다. 키워드를 심어 두면, 키워드끼리 반응한 결과가 적을 무너뜨리는 턴제 덱빌딩 전투를 기획했습니다.</p>
     <div class="case-meta reveal">
       <span class="m"><b>역할</b>기획 · 시스템 설계</span>
-      <span class="m"><b>형태</b>1인 개발 + AI 협업</span>
+      <span class="m"><b>형태</b>1인 작업 + AI 협업</span>
       <span class="m"><b>도구</b>HTML</span>
       <span class="m"><b>장르</b>턴제 덱빌딩 로그라이크</span>
     </div>
@@ -48,7 +52,7 @@
       <p class="pullquote">"직접 공격을 덜어내면,<br />덱빌딩에 무엇이 남을까?"</p>
       <div class="emo-grid">
         <div class="emo">
-          <div class="em-t">목적 · 무엇을 해결하나</div>
+          <div class="em-t">목적 · 무엇을 푸나</div>
           <div class="em-d">기존 덱빌딩에서 플레이어의 핵심 질문은 "이번 턴에 얼마나 때릴까"입니다. 블룸 사이클은 이 질문을 <span class="em">"어떤 키워드를 어떻게 심을까"</span>로 바꿉니다.</div>
         </div>
         <div class="emo">
@@ -132,7 +136,7 @@
       <div class="cb-label">기획 관점에서 내린 결정</div>
       <ul class="mech-list">
         <li><b>때리는 카드를 덜었다</b> — 직접 피해는 일부 카드에만 남기고, 나머지는 전부 키워드를 심는 도구로 바꿨습니다.</li>
-        <li><b>49가지가 아니라 5가지</b> — 가능한 조합은 49개지만 정식 반응은 5개로 압축했습니다. 외울 게 적어야 발견의 재미가 머리 아픔으로 뒤집히지 않습니다.</li>
+        <li><b>49가지가 아니라 5가지</b> — 가능한 조합은 49가지지만 정식 반응은 5가지로 압축했습니다. 외울 게 적어야 발견의 재미가 머리 아픔으로 뒤집히지 않습니다.</li>
         <li><b>줄 세우지 않고 그 자리서 처리</b> — 반응을 큐에 모아 일괄 처리하는 대신 즉시 풀어, "왜 이 순서지?"를 따지지 않아도 인과가 화면에 그대로 보이게 했습니다.</li>
         <li><b>광역 카드 카테고리를 없앴다</b> — 바람 키워드 한 종으로 통합해, 카드 풀과 플레이어 인지 부담을 함께 줄였습니다.</li>
         <li><b>블랙박스 공포를 막았다</b> — 자동 시스템이 깜깜이가 되지 않도록 반응표·바람 로그(보여주기)와 전이 10회 한도(막기)를 함께 설계했습니다.</li>
@@ -142,9 +146,9 @@
     <div class="case-block reveal">
       <div class="cb-label">설계 숫자</div>
       <table class="spec-table">
-        <thead><tr><th>지표</th><th>값과 이유</th></tr></thead>
+        <thead><tr><th>항목</th><th>값과 설명</th></tr></thead>
         <tbody>
-          <tr><td>키워드 종류</td><td>7개. 식물 3 + 자연 2 + 상태 2로 묶었습니다.</td></tr>
+          <tr><td>키워드 종류</td><td>7가지. 식물 3 + 자연 2 + 상태 2로 묶었습니다.</td></tr>
           <tr><td>가능한 조합</td><td>49가지. 다 만들지 않습니다.</td></tr>
           <tr><td>정식 반응 규칙</td><td>5가지. 49가지 조합 중 자주 쓰는 줄기만 정식 규칙으로 남겼습니다.</td></tr>
           <tr><td>한 카드의 전개</td><td>최대 4단까지 자동으로 풀립니다. 즉시 반응 · 바람 전이 · 자연 변화 3가지 타이밍을 거칩니다.</td></tr>
@@ -167,7 +171,7 @@
         </div>
         <div class="emo">
           <div class="em-t">발견감</div>
-          <div class="em-d">규칙은 5개뿐입니다. 카드를 섞다 보면 의외의 조합이 손에 잡힙니다.</div>
+          <div class="em-d">규칙은 5가지뿐입니다. 카드를 섞다 보면 의외의 조합이 손에 잡힙니다.</div>
         </div>
         <div class="emo">
           <div class="em-t">정체성</div>
@@ -188,7 +192,7 @@
         <iframe src="docs/bloomcycle-keyword-proposal.pdf#view=FitH" title="블룸 사이클 키워드 시스템 제안서" loading="lazy"></iframe>
         <div class="pdf-fallback">브라우저에서 PDF 미리보기가 안 보이면 아래 버튼을 눌러 새 탭에서 여세요.</div>
       </div>
-      <p class="pdf-meta">블룸 사이클 키워드 시스템 제안서 — 키워드 7종과 반응 규칙 5종의 설계 의도와 결정 과정을 한 문서로 묶었습니다.</p>
+      <p class="pdf-meta">블룸 사이클 키워드 시스템 제안서 — 키워드 7가지와 반응 규칙 5가지의 설계 의도와 결정 과정을 한 문서로 묶었습니다.</p>
       <div class="pdf-actions">
         <a class="pdf-btn primary" href="docs/bloomcycle-keyword-proposal.pdf" target="_blank" rel="noopener">새 탭에서 보기 →</a>
         <a class="pdf-btn" href="docs/bloomcycle-keyword-proposal.pdf" download>파일 내려받기</a>
