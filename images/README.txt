@@ -5,18 +5,24 @@
  정사각형 이미지가 가장 보기 좋고, 직사각형은 가운데 기준으로 꽉 차게 잘립니다.)
 
   할로우 나이트            →  hollow-knight.png
-  몬스터 헌터              →  monster-hunter.png
   데스티니 가디언즈        →  destiny.png
-  스도리카 (Sdorica)       →  sdorica.png
-  딥 락 갤럭틱             →  deep-rock.png
+  몬스터 헌터              →  monster-hunter.png
   더 라스트 오브 어스      →  last-of-us.png
+  원신                     →  genshin.png        (아직 없음)
+  블루 아카이브            →  blue-archive.png   (아직 없음)
+  딥 락 갤럭틱             →  deep-rock.png
 
 이미지가 아직 없을 때는 게임 약자 타일이 대신 표시됩니다.
+(원신은 GI, 블루 아카이브는 BA로 나옵니다.)
 파일을 넣은 뒤 사이트를 새로고침하면 아이콘이 나타납니다.
 
---- About 6.0 AI Skills (sub_brain 카드) ---
+--- About 5.0 AI Skills (sub_brain 카드) ---
 
-  옵시디언 그래프 뷰 스크린샷  →  sub-brain-graph.png
+  옵시디언 그래프 뷰 스크린샷  →  sub-brain-graph.png   (아직 없음)
 
 (가로로 살짝 넓은(4:3 근처) 이미지가 가장 보기 좋습니다. 가운데 기준으로 꽉 차게 잘립니다.
  파일이 없으면 "이미지 자리 — 옵시디언 그래프 뷰" 안내 박스가 대신 표시됩니다.)
+
+--- 안 쓰이는 파일 ---
+
+  sdorica.png, shovelhopping.gif — 슬라이더에서 빠진 뒤 남은 파일입니다. 지워도 됩니다.
