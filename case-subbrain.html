@@ -84,19 +84,19 @@
       <div class="flow">
         <div class="flow-step">
           <span class="fs-tag">/wikilearn</span>
-          <div class="fs-t">자료를 넣는다</div>
+          <div class="fs-t">자료 넣기</div>
           <div class="fs-d">파일이나 링크를 주면 raw에 저장하고 색인한 뒤, 핵심을 요약해 보여주고 위키 페이지를 만들거나 갱신합니다. 그 과정에서 관련 페이지끼리 링크가 생겨 그래프가 점점 촘촘해집니다.</div>
         </div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-step">
           <span class="fs-tag">/wikiask</span>
-          <div class="fs-t">물어본다</div>
+          <div class="fs-t">묻기</div>
           <div class="fs-d">질문을 임베딩해 관련 자료를 찾고, 정리된 위키를 우선 읽어 출처를 단 답을 만듭니다. 모아둔 자료에 근거가 없으면 지어내지 않고 없다고 답합니다.</div>
         </div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-step">
           <span class="fs-tag">/wikilint</span>
-          <div class="fs-t">점검한다</div>
+          <div class="fs-t">점검</div>
           <div class="fs-d">자료가 쌓이면 가끔 돌립니다. 모순, 고아 페이지, 끊긴 링크, 빠진 개념을 찾아 정리 상태를 봐 줍니다.</div>
         </div>
       </div>
@@ -115,9 +115,9 @@
     <div class="case-block reveal">
       <div class="cb-label">운영하며 내린 결정</div>
       <ul class="mech-list">
-        <li><b>분류는 코드가 아니라 지시문에 맡긴다</b> — 자료를 어디로 보낼지 판단하는 일을 스크립트에 박지 않고, 커맨드 지시문에 적어 LLM이 그때그때 판정하게 했습니다.</li>
-        <li><b>답에는 출처를 단다</b> — 모아둔 자료에 없는 내용을 지어내지 않도록, 답할 때 근거가 된 raw를 반드시 함께 답니다.</li>
-        <li><b>raw는 손대지 않는다</b> — 원본을 고치면 인용의 출처를 되짚을 수 없게 됩니다. 그래서 raw는 한 번 들어오면 불변으로 둡니다.</li>
+        <li><b>지시문 기반 분류</b> — 자료를 어디로 보낼지 판단하는 일을 스크립트에 박지 않고, 커맨드 지시문에 적어 LLM이 그때그때 판정하게 했습니다.</li>
+        <li><b>답변 출처 표기</b> — 모아둔 자료에 없는 내용을 지어내지 않도록, 답할 때 근거가 된 raw를 반드시 함께 답니다.</li>
+        <li><b>raw 불변</b> — 원본을 고치면 인용의 출처를 되짚을 수 없게 됩니다. 그래서 raw는 한 번 들어오면 불변으로 둡니다.</li>
       </ul>
     </div>
 

@@ -70,47 +70,38 @@
 
     <div class="case-block reveal">
       <div class="cb-label">목적 / 기획 의도</div>
-      <p class="pullquote">"이동 자체가 재미있는<br />메트로바니아를 만들 수 있을까?"</p>
+      <p class="pullquote">이동이 재미있는 메트로바니아</p>
       <div class="emo-grid">
         <div class="emo">
-          <div class="em-t">목적 · 무엇을 푸나</div>
-          <div class="em-d">기존 메트로바니아는 탐험과 전투가 핵심이라, 아무것도 없는 통로를 걸어 지나는 이동 구간이 비어 있습니다. <span class="em">그 빈 구간을 재미로 채우는 것</span>이 셔블의 목표입니다.</div>
+          <div class="em-t">목적</div>
+          <div class="em-d">점프라는 이동의 기본 구성요소를 전투 시스템까지 확장하고 싶었습니다.</div>
         </div>
         <div class="emo">
-          <div class="em-t">기획 의도 · 왜 점프 하나인가</div>
-          <div class="em-d">새 조작을 더하는 대신 누구나 아는 점프 하나를 기본 이동으로 끌어올렸습니다. 입력이 하나면 진입 장벽은 낮게 유지되고, 숙련은 같은 동작의 타이밍을 다듬는 쪽으로 깊어지기 때문입니다.</div>
+          <div class="em-t">기획 의도</div>
+          <div class="em-d">플레이어들에게 익숙한 점프라는 조작을 전투와 결합하여 유저에게 친숙하면서도 새로운 경험을 제공하고 싶었기 때문입니다.</div>
         </div>
       </div>
     </div>
 
     <div class="case-block reveal">
-      <div class="cb-label">접근 / 설계 — 핵심 콘셉트 3축</div>
-      <div class="axis-grid">
-        <div class="axis"><div class="ax-t">수직 이동 자유</div><div class="ax-d">사다리·엘리베이터에 의존하지 않는 수직 이동으로 레벨 디자인의 폭을 넓힙니다.</div></div>
-        <div class="axis"><div class="ax-t">익숙함의 확장</div><div class="ax-d">점프 하나로 모든 이동을 처리해, 낮은 진입 장벽과 높은 숙련 곡선을 동시에 잡습니다.</div></div>
-        <div class="axis"><div class="ax-t">이동 = 전투</div><div class="ax-d">다운 스트라이크(공중에서 삽을 아래로 꽂으며 내려찍는 공격)가 이동(바운스)·전투(데미지)·탐험(지형 파괴)을 하나의 입력으로 묶습니다.</div></div>
-      </div>
-    </div>
-
-    <div class="case-block reveal">
-      <div class="cb-label">핵심 루프 — 행동 → 보상 → 다음 동기</div>
+      <div class="cb-label">핵심 루프</div>
       <div class="flow">
         <div class="flow-step">
           <span class="fs-tag">행동</span>
-          <div class="fs-t">뛰고, 내려찍는다</div>
-          <div class="fs-d">모든 이동이 점프 호로 일어나고, 높이 뛸수록 다운 스트라이크가 강해집니다.</div>
+          <div class="fs-t">점프와 다운 스트라이크</div>
+          <div class="fs-d">모든 이동이 점프를 기반으로 일어나고 높이 뛸수록 다운 스트라이크가 강해집니다.</div>
         </div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-step">
           <span class="fs-tag">보상</span>
           <div class="fs-t">잔불과 돌파</div>
-          <div class="fs-d">다운 스트라이크로 적을 치면 회복 자원(잔불)이 쌓이고, 지형이 부서지며 새 루트가 열립니다.</div>
+          <div class="fs-d">다운 스트라이크로 적을 공격하면 회복 자원(잔불)이 쌓이고 지형이 부서지며 새 루트가 열립니다.</div>
         </div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-step">
           <span class="fs-tag">다음 동기</span>
           <div class="fs-t">더 정확한 점프</div>
-          <div class="fs-d">살아남으려면 적을 쳐야 하니, 다음 구간에서는 더 높은 자리와 더 정확한 낙하 지점을 찾게 됩니다.</div>
+          <div class="fs-d">살아남으려면 적을 공격해야 하니 다음 구간에서는 더 높은 자리와 더 정확한 낙하 지점(공격 대상)을 찾습니다.</div>
         </div>
       </div>
     </div>
@@ -129,9 +120,10 @@
     <div class="case-block reveal">
       <div class="cb-label">기획 관점에서 내린 결정</div>
       <ul class="mech-list">
-        <li><b>숫자로 위계를 만든다</b> — 최고 낙하 속도(25 타일/s)와 다운 스트라이크 하강(50 타일/s)을 정확히 2배로 둬, 다운 스트라이크가 "확연히 빠른 특별한 행동"으로 읽히게 했습니다.</li>
-        <li><b>규칙으로 성향을 유도한다</b> — 회복 자원(잔불)은 다운 스트라이크로 적을 칠 때만 쌓이게 해서, <span class="em">"도망쳐선 살 수 없다"</span>를 플레이어가 스스로 익히도록 설계했습니다.</li>
-        <li><b>성장의 방향을 정한다</b> — 실력은 새 입력을 늘리는 쪽이 아니라, 같은 동작의 타이밍을 다듬는 쪽으로 자라도록 잡았습니다.</li>
+        <li><b>숫자로 만든 위계</b> — 최고 낙하 속도(25 타일/s)와 다운 스트라이크 하강(50 타일/s)을 정확히 2배로 둬, 다운 스트라이크가 "확연히 빠른 특별한 행동"으로 읽히게 했습니다.</li>
+        <li><b>규칙으로 유도한 성향</b> — 회복 자원(잔불)은 다운 스트라이크로 적을 칠 때만 쌓이게 해서, <span class="em">"도망쳐선 살 수 없다"</span>를 플레이어가 스스로 익히도록 설계했습니다.</li>
+        <li><b>성장 곡선의 방향</b> — 실력은 새 입력을 늘리는 쪽이 아니라, 같은 동작의 타이밍을 다듬는 쪽으로 자라도록 잡았습니다.</li>
+        <li><b>레벨 디자인의 수직 폭</b> — 사다리와 엘리베이터를 빼고 점프만으로 수직 이동을 처리해서, 맵을 위아래로 넓게 쓸 수 있게 했습니다.</li>
       </ul>
     </div>
 
