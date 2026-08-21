@@ -26,7 +26,7 @@
   <div class="wrap">
     <span class="eyebrow reveal">Case Study · 셔블 (Shovel)</span>
     <h1 class="case-title reveal">이동 자체가 재미있는<br />메트로바니아</h1>
-    <p class="case-sub reveal">삽을 스카이콩콩처럼 타고 통통 뛰는 기사. 점프 하나로 이동·전투·탐험을 모두 푸는 캐릭터를 설계했습니다.</p>
+    <p class="case-sub reveal">삽을 스카이콩콩처럼 타고 통통 뛰는 기사. 점프 중심의 캐릭터 디자인입니다.</p>
     <div class="case-meta reveal">
       <span class="m"><b>역할</b>기획 · 아트 · 적 AI(FSM)</span>
       <span class="m"><b>형태</b>2인 팀</span>
@@ -65,12 +65,11 @@
         </div>
         <span class="doc-arrow" aria-hidden="true">→</span>
       </a>
-      <p class="doc-cap">위에서 다룬 규칙과 수치는 이 기획서에 전부 정리돼 있습니다.</p>
     </div>
 
     <div class="case-block reveal">
       <div class="cb-label">목적 / 기획 의도</div>
-      <p class="pullquote">이동이 재미있는 메트로바니아</p>
+      <p class="pullquote">점프와 전투를 하나로</p>
       <div class="emo-grid">
         <div class="emo">
           <div class="em-t">목적</div>
@@ -78,7 +77,7 @@
         </div>
         <div class="emo">
           <div class="em-t">기획 의도</div>
-          <div class="em-d">플레이어들에게 익숙한 점프라는 조작을 전투와 결합하여 유저에게 친숙하면서도 새로운 경험을 제공하고 싶었기 때문입니다.</div>
+          <div class="em-d">플레이어들에게 익숙한 점프라는 조작을 전투와 결합하여 유저에게 <span class="em">친숙하면서도 새로운 경험</span>을 제공하고 싶었기 때문입니다.</div>
         </div>
       </div>
     </div>
@@ -89,7 +88,7 @@
         <div class="flow-step">
           <span class="fs-tag">행동</span>
           <div class="fs-t">점프와 다운 스트라이크</div>
-          <div class="fs-d">모든 이동이 점프를 기반으로 일어나고 높이 뛸수록 다운 스트라이크가 강해집니다.</div>
+          <div class="fs-d">기본 이동은 전부 점프이고 높이 뛸수록 다운 스트라이크가 강해집니다.</div>
         </div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-step">
@@ -107,23 +106,20 @@
     </div>
 
     <div class="case-block reveal">
-      <div class="cb-label">핵심 메커닉 — 점프 온리 이동</div>
+      <div class="cb-label">핵심 메커닉 — 점프 중심의 캐릭터 디자인</div>
       <ul class="mech-list">
-        <li>이동 중에는 항상 점프합니다. 걷기는 없고, 방향 입력은 공중에서만 유효해 <b>모든 이동이 점프 호(arc)</b>로 일어납니다.</li>
-        <li>벽 그랩 없음, 천장에 부딪혀도 상승만 멈추고 수평 속도는 유지 — 규칙을 단순하게 묶었습니다.</li>
-        <li>착지 리커버리 0프레임 · 코요테 타임 · 점프 버퍼로, <b class="em">누른 타이밍이 조금 어긋나도 의도한 점프가 나가게</b> 했습니다.</li>
-        <li>차지 점프(3단계 · 색과 진동 피드백), 더블 점프(안전망), 오브젝트 점프(루트 확장)로 이동을 넓혔습니다.</li>
-        <li>다운 스트라이크는 <b class="em">"뛰어오른 높이가 곧 공격력"</b> — 낙하 높이별로 데미지 구간을 나눴습니다.</li>
+        <li><b>점프 온리 이동</b> — 방향 입력이 공중에서만 유효해 지상에서는 좌우 반전만 되고 <b class="em">실제 이동은 다음 점프의 궤적으로만 일어납니다.</b> 대시와 패링 포고는 여기서 파생된 확장 이동입니다.</li>
+        <li><b>높이로 정한 공격력</b> — 다운 스트라이크는 공격을 시전한 높이에 비례하여 데미지가 증가합니다. 같은 풀차지 점프라도 정점에서 곧바로 누르면 강 구간이고 하강 도중 뒤늦게 누르면 중 구간으로 떨어집니다.</li>
+        <li><b>판정 폭으로 만든 위계</b> — 다운 스트라이크가 가능한 최소 높이를 설정해서 무제한으로 공격을 연타하는 걸 막는 안전망을 두었습니다.</li>
       </ul>
     </div>
 
     <div class="case-block reveal">
-      <div class="cb-label">기획 관점에서 내린 결정</div>
+      <div class="cb-label">설계 결정</div>
       <ul class="mech-list">
-        <li><b>숫자로 만든 위계</b> — 최고 낙하 속도(25 타일/s)와 다운 스트라이크 하강(50 타일/s)을 정확히 2배로 둬, 다운 스트라이크가 "확연히 빠른 특별한 행동"으로 읽히게 했습니다.</li>
-        <li><b>규칙으로 유도한 성향</b> — 회복 자원(잔불)은 다운 스트라이크로 적을 칠 때만 쌓이게 해서, <span class="em">"도망쳐선 살 수 없다"</span>를 플레이어가 스스로 익히도록 설계했습니다.</li>
-        <li><b>성장 곡선의 방향</b> — 실력은 새 입력을 늘리는 쪽이 아니라, 같은 동작의 타이밍을 다듬는 쪽으로 자라도록 잡았습니다.</li>
-        <li><b>레벨 디자인의 수직 폭</b> — 사다리와 엘리베이터를 빼고 점프만으로 수직 이동을 처리해서, 맵을 위아래로 넓게 쓸 수 있게 했습니다.</li>
+        <li><b>규칙으로 유도한 성향</b> — 회복 자원(잔불)은 다운 스트라이크로 적을 공격할 때만 쌓이게 해서 <span class="em">플레이어가 공격적인 플레이를 하도록 유도</span>했습니다.</li>
+        <li><b>성장 곡선의 방향</b> — 능력을 해금할 때마다 조작키를 크게 늘리지 않고 기존 버튼이 여러 액션으로 이어지게 해서 조작 난이도를 올리고, 올라간 난이도에 맞춰 숙련도가 높아지면 더 다양한 플레이가 가능하도록 기획했습니다.</li>
+        <li><b>레벨 디자인의 수직 폭</b> — 점프 이동을 확장해서 맵을 위아래로 넓게 쓸 수 있게 했습니다.</li>
       </ul>
     </div>
 
